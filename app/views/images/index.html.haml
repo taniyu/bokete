@@ -1,6 +1,8 @@
 %h1
   画像一覧
 
+= link_to "画像を投稿する", new_image_path
+
 %dl
   - @images.each do |image|
     %dt= image.title
