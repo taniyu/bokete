@@ -12,4 +12,8 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find_by(params[:id])
   end
+  def destroy
+    Image.find_by(params[:id]).destroy
+    redirect_to action: :index
+  end
 end
