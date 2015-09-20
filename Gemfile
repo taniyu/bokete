@@ -47,3 +47,4 @@ end
 
 gem "haml-rails"
 gem "rspec-rails"
+gem "rspec-json_matcher"
