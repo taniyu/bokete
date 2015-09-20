@@ -9,4 +9,7 @@ class ImagesController < ApplicationController
     Image.create(params.require(:image).permit(:url, :title))
     redirect_to action: :index
   end
+  def show
+    @image = Image.find_by(params[:id])
+  end
 end

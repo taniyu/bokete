@@ -22,4 +22,11 @@ RSpec.describe ImagesController, type: :controller do
       }.from(0).to(1)
     end
   end
+  describe "#show" do
+    let(:image) { Image.create(url: "http://example.com", title: "test") }
+    it "assigns @image" do
+      get :show, id: image.id
+      expect(assigns(:image)).to eq image
+    end
+  end
 end

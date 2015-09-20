@@ -6,4 +6,6 @@
 %dl
   - @images.each do |image|
     %dt= image.title
-    %dd= image_tag image.url
+    %dd
+      = link_to image do
+        = image_tag image.url
