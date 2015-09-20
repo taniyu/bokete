@@ -6,8 +6,11 @@ class ImagesController < ApplicationController
     @image = Image.new
   end
   def create
-    Image.create(params.require(:image).permit(:url, :title))
-    redirect_to action: :index
+    Image.create!(params.require(:image).permit(:url, :title))
+    respond_to do |format|
+      format.html { redirect_to action: :index }
+      format.json { head 201 }
+    end
   end
   def show
     @image = Image.find_by(params[:id])
