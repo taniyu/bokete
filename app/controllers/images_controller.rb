@@ -5,4 +5,8 @@ class ImagesController < ApplicationController
   def new
     @image = Image.new
   end
+  def create
+    Image.create(params.require(:image).permit(:url, :title))
+    redirect_to action: :index
+  end
 end
