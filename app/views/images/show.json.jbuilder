@@ -1,2 +1,2 @@
 json.(@image, :id, :title, :url)
-json.comments @image.comments, :id, :body
+json.comments @image.comments, :id, :body, :created_at
