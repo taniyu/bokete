@@ -13,10 +13,10 @@ class ImagesController < ApplicationController
     end
   end
   def show
-    @image = Image.find_by(params[:id])
+    @image = Image.find_by(id: params[:id])
   end
   def destroy
-    Image.find_by(params[:id]).destroy
+    Image.find_by(id: params[:id]).destroy
     redirect_to action: :index
   end
 end

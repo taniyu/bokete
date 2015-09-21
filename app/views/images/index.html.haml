@@ -7,5 +7,5 @@
   - @images.each do |image|
     %dt= image.title
     %dd
-      = link_to image do
+      = link_to image_path(image.id) do
         = image_tag image.url

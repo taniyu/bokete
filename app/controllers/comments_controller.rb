@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    image = Image.find_by(params[:image_id])
+    image = Image.find_by(id: params[:image_id])
     image.comments.create(params.require(:comment).permit(:body))
     respond_to do |format|
       format.html { redirect_to image_path(image) }
